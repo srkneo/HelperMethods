@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace HelperMethods.Infrastructure
 {
-    public class CustomHelpers
+    public static class CustomHelpers
     {
         public static MvcHtmlString ListArrayItems(this HtmlHelper html, string[] list)
         {
@@ -15,7 +15,7 @@ namespace HelperMethods.Infrastructure
             foreach(string str in list)
             {
                 TagBuilder itemTag = new TagBuilder("li");
-                itemTag.SetInnerText("str");
+                itemTag.SetInnerText(str);
                 tag.InnerHtml += itemTag.ToString();
             }
             return new MvcHtmlString(tag.ToString());
