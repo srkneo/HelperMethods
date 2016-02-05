@@ -6,19 +6,27 @@
 
 <h2>CreatePerson</h2>
 
-@{Html.BeginForm();}
+@using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post,
+    new { @class = "personClass", data_formType="person" }))
+{ 
     <div class="dataElem">
         <label>PersonId</label>
-        <input name="personId" value="@Model.PersonId" />
+        @Html.TextBoxFor(m => m.PersonId)
     </div>
     <div class="dataElem">
         <label>First Name</label>
-        <input name="firstName" value="@Model.FirstName" />
+        @Html.TextBoxFor(m => m.FirstName)
     </div>
     <div class="dataElem">
         <label>Last Name</label>
-        <input name="lastName" value="@Model.LastName" />
+        @Html.TextBoxFor(m => m.LastName)
+    </div>
+    <div class="dataElem">
+        <label>Role</label>
+        @Html.DropDownListFor(m => m.Role, new SelectList(Enum.GetNames(typeof(HelperMethods.Models.Role))))
     </div>
     <input type="submit" value="Submit" />
-@{Html.EndForm();}
+}
+    
+
 
