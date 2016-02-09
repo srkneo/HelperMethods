@@ -113,6 +113,7 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\People\GetPeople.cshtml" />
+    <Content Include="Views\People\GetPeopleData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
